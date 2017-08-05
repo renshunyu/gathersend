@@ -68,6 +68,8 @@ public class App
         mr.setSlo(slo);
         mr.setDayallcount(Integer.parseInt(rp.getConf().getProperty("dayallcount")));
 
+        mr.setFunclass(rp.getConf().getProperty("funclass"));
+
         
 		while (true) {
 			cachedThreadPool.execute(mr);

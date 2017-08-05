@@ -4,18 +4,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+
+import com.asiainfo.a4.gathersend.myGatherSend.Interface.InputFuntionInterface;
 /**
  * @author rensy
  *
  */
 public class MathDeal {
 	static Logger log =Logger.getLogger(MathDeal.class);
-	static GsInput p = new GsInput();
+	static InputFuntionInterface p;
 	
 	public static double result(double x){
 		return p.result(x);
 	}
 	
+	public static InputFuntionInterface getP() {
+		return p;
+	}
+
+	public static void setP(InputFuntionInterface p) {
+		MathDeal.p = p;
+	}
+
 	public static double dayresult(){
 		double re = 0;
 		int i = 0;

@@ -27,6 +27,7 @@
         <property name="conf">
             <map>
                 <entry key="dayallcount" value="${dayallcount}" />
+                <entry key="funclass" value="${funclass}" />
             </map>
         </property>
     </bean>
