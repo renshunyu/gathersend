@@ -25,6 +25,7 @@ public class App
 {
     public static void main( String[] args ) throws FileNotFoundException, IOException, InterruptedException{
     	Logger log =Logger.getLogger(App.class);
+    	
 /*        log.info( "Hello World!" );
         log.info( System.getProperties().getProperty("os.name") );
         log.info( System.getProperties().getProperty("os.arch") );
