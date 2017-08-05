@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 加载配置文件 -->
+
+    <bean id="confload" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:uac.properties</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="sendconf" class="com.asiainfo.a4.gathersend.myGatherSend.Base.sendConfig">
+        <property name="p">
+            <map>
+                <entry key="gather-ip-0" value="${gather-ip-0}" />
+                <entry key="gather-port-0" value="${gather-port-0}"/>
+                <entry key="backup-directory" value="${backup-directory}"/>
+                <entry key="pool-max-capacity" value="${pool-max-capacity}" />
+                <entry key="pool-max-send-workers" value="${pool-max-send-workers}"/>
+                <entry key="record-directory" value="${record-directory}"/>
+            </map>
+        </property>
+    </bean>
+    <bean id="runconf" class="com.asiainfo.a4.gathersend.myGatherSend.Base.RunPremeter">
+        <property name="conf">
+            <map>
+                <entry key="dayallcount" value="${dayallcount}" />
+            </map>
+        </property>
+    </bean>
+    </beans>
