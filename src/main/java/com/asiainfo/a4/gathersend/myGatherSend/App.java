@@ -10,6 +10,7 @@ import java.util.concurrent.Executors;
 
 import org.apache.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 
 import com.asiainfo.a4.gathersend.myGatherSend.Base.RunPremeter;
 import com.asiainfo.a4.gathersend.myGatherSend.Base.SendLogOper;
@@ -55,6 +56,9 @@ public class App
 		//tsend.isend(list);
 		//System.out.println(f.sresult(10000000, dayseconds));
 		//System.out.println("哈哈哈哈哈哈哈哈");
+    	
+    	
+    	
 		
 		ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
 		log.info(cachedThreadPool);
@@ -70,8 +74,8 @@ public class App
         mr.setDayallcount(Integer.parseInt(rp.getConf().getProperty("dayallcount")));
 
         mr.setFunclass(rp.getConf().getProperty("funclass"));
-
-        
+        //ThreadPoolTaskScheduler tpool = new ThreadPoolTaskScheduler();
+        //tpool.scheduleAtFixedRate(mr, 1000);
 		while (true) {
 			cachedThreadPool.execute(mr);
 			try {
